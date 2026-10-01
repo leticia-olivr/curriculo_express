@@ -1,12 +1,14 @@
 const express = require('express');
 const pessoaRoutes = require('./routes/pessoaRoutes');
 const formacaoRoutes = require('./routes/formacaoRoutes');
+const experienciaRoutes = require('./routes/experienciaRoutes');
 
 const app = express();
 
 app.use(express.json());
 app.use('/api/pessoas', pessoaRoutes);
 app.use('/api/formacoes', formacaoRoutes);
+app.use('/api/experiencias', experienciaRoutes);
 
 app.get('/', (req, res) => {
   res.status(200).json({
