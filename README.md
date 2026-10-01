@@ -40,3 +40,16 @@ curl http://localhost:3000/
 ```
 
 A resposta esperada é um JSON com a mensagem `API Curriculo Express funcionando.`.
+
+## PostgreSQL no Neon
+
+No painel do Neon, abra o projeto e use **Connect** para copiar a connection
+string PostgreSQL. Cole a string completa no valor de `DATABASE_URL` do arquivo
+`.env` (não no `.env.example`). Mantenha os parâmetros de conexão e SSL
+fornecidos pelo Neon. O arquivo `.env` é ignorado pelo Git; não publique essa
+string.
+
+Ao iniciar a API com `npm run dev` ou `npm start`, o servidor executa `SELECT 1`
+para testar a conexão. Uma conexão bem-sucedida exibe `Conexão com PostgreSQL
+estabelecida.` no terminal. Se `DATABASE_URL` estiver vazia ou inválida, o
+terminal informa que a variável não está configurada ou exibe o erro de conexão.
