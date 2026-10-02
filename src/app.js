@@ -5,6 +5,7 @@ const experienciaRoutes = require('./routes/experienciaRoutes');
 const projetoRoutes = require('./routes/projetoRoutes');
 const habilidadeRoutes = require('./routes/habilidadeRoutes');
 const certificacaoRoutes = require('./routes/certificacaoRoutes');
+const curriculoRoutes = require('./routes/curriculoRoutes');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use('/api/experiencias', experienciaRoutes);
 app.use('/api/projetos', projetoRoutes);
 app.use('/api/habilidades', habilidadeRoutes);
 app.use('/api/certificacoes', certificacaoRoutes);
+app.use('/api/curriculos', curriculoRoutes);
 
 app.get('/', (req, res) => {
   res.status(200).json({
